@@ -23,34 +23,39 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="What is "
-            android:textColor="?android:attr/colorAccent"
+            android:paddingStart="0sp"
+            android:paddingEnd="10sp"
+            android:paddingLeft="0sp"
+            android:paddingRight="10sp"
+            android:text="@string/what_is"
+            android:textColor="@android:color/holo_red_light"
             android:textSize="26sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            />
 
         <TextView
             android:id="@+id/leftInteger"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="99"
-            android:textSize="26sp" />
+            android:textSize="26sp"
+            tools:text="@string/Place_Holder_99" />
 
         <TextView
             android:id="@+id/operator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text=" + "
-            android:textSize="26sp" />
+            android:textSize="26sp"
+            tools:text="@string/Place_Holder_Operator" />
 
         <TextView
             android:id="@+id/rightInteger"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="99"
-            android:textSize="26sp" />
+            android:textSize="26sp"
+            tools:text="@string/Place_Holder_99" />
 
 
         <TextView
@@ -58,7 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="\?"
+            android:text="@string/question_mark"
             android:textSize="26sp" />
     </LinearLayout>
 
@@ -78,8 +83,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="5sp"
             android:layout_weight="1"
-            android:text="11"
-            android:textSize="26sp" />
+            android:textSize="26sp"
+            tools:text="@string/answer_one" />
 
         <RadioButton
             android:id="@+id/answer3"
@@ -87,10 +92,10 @@
             android:layout_height="wrap_content"
             android:layout_margin="5sp"
             android:layout_weight="1"
-            android:text="33"
             android:textSize="26sp"
             tools:layout_editor_absoluteX="53dp"
-            tools:layout_editor_absoluteY="94dp" />
+            tools:layout_editor_absoluteY="94dp"
+            tools:text="@string/answer_2" />
 
         <RadioButton
             android:id="@+id/answer2"
@@ -98,8 +103,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="5sp"
             android:layout_weight="1"
-            android:text="22"
-            android:textSize="26sp" />
+            android:textSize="26sp"
+            tools:text="@string/answer_3" />
 
     </RadioGroup>
 
@@ -107,7 +112,7 @@
         android:id="@+id/submitAnswer"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Submit Answer"
+        android:text="@string/submit_answer"
         android:textSize="26sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

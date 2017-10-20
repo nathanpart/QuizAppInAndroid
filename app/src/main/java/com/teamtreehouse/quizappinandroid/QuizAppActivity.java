@@ -50,26 +50,31 @@ public class QuizAppActivity extends AppCompatActivity {
         }
     };
 
+    // Toast results of answer selection. Returns true if a selected answer found, false otherwise
+    private boolean gradeAnswer() {
+        for (int i = 0; i < 3; i++) {
+            if (answers[i].isChecked()) {
+                if (i == mathQuestion.getAnswerIndex()) {
+                    Toast.makeText(QuizAppActivity.this, getText(R.string.correct_response), Toast.LENGTH_LONG).show();
+                    return true;
+                } else {
+                    Toast.makeText(QuizAppActivity.this, getText(R.string.incorrect_response), Toast.LENGTH_LONG).show();
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
     //Submit button listener
     private View.OnClickListener submitAnswer = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            boolean selectionFound = false;
-            for (int i = 0; i < 3; i++) {
-                if (answers[i].isChecked()) {
-                    selectionFound = true;
-                    if (i == mathQuestion.getAnswerIndex()) {
-                        Toast.makeText(QuizAppActivity.this, "Correct!", Toast.LENGTH_LONG).show();
-                    } else {
-                        Toast.makeText(QuizAppActivity.this, "Incorrect!", Toast.LENGTH_LONG).show();
-                    }
-                }
-            }
-            if (selectionFound) {
+            if (gradeAnswer()) {
                 generateQuestion();
             } else {
                 Toast.makeText(QuizAppActivity.this,
-                        "Please select an answer.",
+                        getText(R.string.unknown_selection),
                         Toast.LENGTH_LONG).show();
             }
         }
@@ -101,7 +106,7 @@ public class QuizAppActivity extends AppCompatActivity {
         submit.setOnClickListener(submitAnswer);
 
         //Create mathQuestion model and generate first question
-        mathQuestion = MathQuizFactory.getMathQuiz(MathQuizFactory.ADDITION_QUIZ, 100);
+        mathQuestion = MathQuizFactory.getMathQuiz(MathQuizFactory.ADDITION_QUIZ, 100, getResources());
         generateQuestion();
     }
 }

@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Quiz App In Android</string>
+    <string name="what_is">What is:</string>
+    <string name="Place_Holder_99">99</string>
+    <string name="Place_Holder_Operator">+</string>
+    <string name="question_mark">\?</string>
+    <string name="answer_one">11</string>
+    <string name="answer_2">33</string>
+    <string name="answer_3">22</string>
+    <string name="submit_answer">Submit Answer</string>
+    <string name="addition_quiz_operator">+</string>
+    <string name="correct_response">Correct!</string>
+    <string name="incorrect_response">Incorrect!</string>
+    <string name="unknown_selection">Please select an answer.</string>
 </resources>

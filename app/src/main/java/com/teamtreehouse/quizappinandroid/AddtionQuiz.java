@@ -1,22 +1,27 @@
 package com.teamtreehouse.quizappinandroid;
 
 
+import android.content.res.Resources;
+
 import java.util.Random;
 
 class AddtionQuiz implements MathQuestion {
     // Random number generator
-    Random numGenerator = new Random();
+    private Random numGenerator = new Random();
 
     // holds current math problem
-    int leftSide;
-    int rightSide;
-    int [] answers;
-    int numberRange;
-    int answerIndex;
+    private int leftSide;
+    private int rightSide;
+    private int [] answers;
+    private int numberRange;
+    private int answerIndex;
+    private Resources resources;   // Access to string resources
 
-    public AddtionQuiz(int range) {
+
+    public AddtionQuiz(int range, Resources resources) {
         answers = new int[3];
         numberRange = range;
+        this.resources = resources;
         generateQuestion();
     }
 
@@ -32,7 +37,7 @@ class AddtionQuiz implements MathQuestion {
 
     @Override
     public String getOperator() {
-        return "+";
+        return resources.getString(R.string.addition_quiz_operator);
     }
 
     @Override
